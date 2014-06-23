@@ -5,5 +5,6 @@ var myFtp = new Server();
 myFtp.init({
   user: "sergi",
   pass: "1234",
-  port: "3334"
+  port: "3334",
+  root: "./pyftpdlib"
 });
