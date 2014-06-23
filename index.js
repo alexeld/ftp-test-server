@@ -14,6 +14,7 @@ FtpServer.prototype.init = function(cfg) {
   cfg.user && cmd.push(cfg.user);
   cfg.pass && cmd.push(cfg.pass);
   cfg.port && cmd.push(cfg.port);
+  cfg.root && cmd.push(cfg.root);
   var server = this.server = spawn('python', cmd);
 
   var self = this;

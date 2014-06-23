@@ -45,6 +45,7 @@ def main():
     port = 3334
     user = ''
     password = ''
+    server_root = os.getcwd()
     l = sys.argv
 
     if (len(l) > 1 and l[1]):
@@ -56,9 +57,12 @@ def main():
     if (len(l) > 3 and l[3]):
         port = int(l[3])
 
+    if (len(l) > 4 and l[4]):
+        server_root = l[4]
+
 
     authorizer = DummyAuthorizer()
-    authorizer.add_user(user, password, os.getcwd(), perm='elradfmwM')
+    authorizer.add_user(user, password, server_root, perm='elradfmwM')
     #authorizer.add_anonymous("/home/nobody")
 
     handler = FTPHandler
